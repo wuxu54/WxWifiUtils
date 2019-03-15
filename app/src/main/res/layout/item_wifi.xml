@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="#FF696B73"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        >
+
+        <FrameLayout
+            android:id="@+id/fl_link_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="10dp"
+            android:visibility="visible"
+            >
+
+            <ImageView
+                android:id="@+id/iv_hook"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/wifi_hook"
+                android:visibility="visible"
+                />
+
+            <ProgressBar
+                android:id="@+id/pb_linking"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/fl_link_iv"
+            android:gravity="center_vertical"
+            >
+
+
+            <TextView
+                android:id="@+id/tv_item_wifi_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_lock"
+                android:layout_marginLeft="10dp"
+                android:text="777"
+                android:textSize="16sp"
+                android:maxLines="1"
+                />
+
+
+            <ImageView
+                android:id="@+id/iv_lock"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_wifi"
+                android:src="@drawable/wifi_lock"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:id="@+id/iv_wifi"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/wifi_icon0"
+                android:visibility="visible"/>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/white"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+</FrameLayout>
