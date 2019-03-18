@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements WifiStateListener
           Manifest.permission.ACCESS_FINE_LOCATION,
   };
 
+  int requestCode = 111;
   boolean needScanWifi = true;
   boolean canScanWifi = needScanWifi;
   WifiStateManager wifiStateManager;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements WifiStateListener
       if (!b) {
         canScanWifi = false;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-          this.requestPermissions(permissions, 111);
+          this.requestPermissions(permissions, requestCode);
         }
       }
     }
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements WifiStateListener
   @Override
   public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
     super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    if (requestCode == 111) {
+    if (requestCode == this.requestCode) {
       boolean result = true;
       for (int p : grantResults) {
         if (p != PERMISSION_GRANTED) {
