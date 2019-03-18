@@ -1,11 +1,16 @@
 package com.wifi.support;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.location.LocationManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.provider.Settings;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 
 import com.wifi.model.WifiBean;
@@ -367,4 +372,15 @@ public class WifiSupport {
       }
     }
   }
+
+  public static void alertOpenGps(final int gpsCode, final Activity activity) {
+    new AlertDialog.Builder(activity).setMessage("请打开手机GPS").setTitle("提示").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialog, int which) {
+        Intent gpsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+        activity.startActivityForResult(gpsIntent, gpsCode);
+      }
+    }).show();
+  }
+
 }

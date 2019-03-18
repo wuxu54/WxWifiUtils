@@ -57,14 +57,6 @@ public class WifiStateManager {
     }
   }
 
-  public void changeWifi(){
-    this.canScanWifi = wifiStateListener.canScanWifi();
-    if (canScanWifi) {
-      wifiListSupport.wifiListChange();
-      wifiStateListener.wifiListChange(wifiListSupport.getRealWifiList());
-    }
-  }
-
   public void registerWifiReceiver(IntentFilter filter) {
     try {
       if (wifiReceiver == null) {
