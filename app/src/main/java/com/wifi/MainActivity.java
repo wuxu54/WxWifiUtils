@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements WifiStateListener
       wifiStateManager.scanWifi();
     } else {
       //这里可显示跳转设置页面提示
-      Toast.makeText(this, "需要开启位置权限 ，才可以扫描wifi列表哦~", Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, "需要开启位置权限 ，才可以扫描wifi列表哦~ ", Toast.LENGTH_SHORT).show();
     }
   }
 
