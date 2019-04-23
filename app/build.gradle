@@ -1,9 +1,10 @@
-apply plugin: 'com.android.application'
-
+//apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.wifi"
+//        applicationId "com.wifi"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
