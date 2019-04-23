@@ -117,25 +117,21 @@ public class WifiLinkDialog extends Dialog implements View.OnClickListener {
 
   @Override
   public void onClick(View v) {
-    switch (v.getId()) {
-      case R.id.btn_confirm: {
-        WifiConfiguration tempConfig = WifiSupport.isExsits(text_nameString, getContext());
-        boolean result = false;
-        if (tempConfig == null) {
-          WifiConfiguration wifiConfiguration = WifiSupport.createWifiConfig(text_nameString, password_edit.getText().toString(), WifiSupport.getWifiCipher(capabilities));
-          result = WifiSupport.addNetWork(wifiConfiguration, getContext());
-        } else {
-          result = WifiSupport.addNetWork(tempConfig, getContext());
-        }
-        if (result) {
-          dismiss();
-        }
-        break;
+    int i = v.getId();
+    if (i == R.id.btn_confirm) {
+      WifiConfiguration tempConfig = WifiSupport.isExsits(text_nameString, getContext());
+      boolean result;
+      if (tempConfig == null) {
+        WifiConfiguration wifiConfiguration = WifiSupport.createWifiConfig(text_nameString, password_edit.getText().toString(), WifiSupport.getWifiCipher(capabilities));
+        result = WifiSupport.addNetWork(wifiConfiguration, getContext());
+      } else {
+        result = WifiSupport.addNetWork(tempConfig, getContext());
       }
-      case R.id.btn_cancel: {
+      if (result) {
         dismiss();
-        break;
       }
+    } else if (i == R.id.btn_cancel) {
+      dismiss();
     }
   }
 }
